@@ -3,7 +3,7 @@ const express = require('express');
 
 // instanciar express
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 // levantar el servidor en puerto
 app.listen(PORT, ()=> {
     console.log(`Servidor express escuchando por el puerto ${PORT}`)
@@ -47,7 +47,7 @@ app.get("/abracadabra/juego/:usuario", (req, res, next) => {
 app.get("/abracadabra/conejo/:n", (req, res) => {
     // creamos la variable numeroUser para almacenar el numero y lo tranformamos en Number
     const numUser = parseInt(req.params.n);
-    const numero = Math.floor(Math.random() * (5 - 1)) + 1;
+    const numero = Math.floor(Math.random() * 4) + 1;
     // se cream console.log para validar por consola la elección de la maquina y el usuario
     console.log("Usuario escogió: ", numUser);
     console.log("Maquina escogió: ", numero);
